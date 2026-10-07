@@ -108,8 +108,17 @@ allprojects {
 
 subprojects {
     afterEvaluate {
-        kotlin {
-            jvmToolchain(config.jvmTargetCompatibility)
+        if (plugins.hasPlugin("kotlin") || plugins.hasPlugin("kotlin-android")) {
+            kotlin {
+                jvmToolchain(config.jvmTargetCompatibility)
+            }
+        }
+        if (plugins.hasPlugin("java") || plugins.hasPlugin("java-library")) {
+            java {
+                toolchain {
+                    languageVersion = JavaLanguageVersion.of(config.jvmTargetCompatibility)
+                }
+            }
         }
     }
 }
