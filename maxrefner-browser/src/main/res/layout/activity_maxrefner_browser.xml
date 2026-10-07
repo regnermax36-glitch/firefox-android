@@ -26,7 +26,7 @@
             android:textColor="#00FF88"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:layout_marginEnd="12dp"/>
+            android:layout_marginEnd="8dp"/>
 
         <EditText
             android:id="@+id/urlEditText"
@@ -45,16 +45,25 @@
             android:singleLine="true"/>
 
         <ImageButton
+            android:id="@+id/newTabButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_input_add"
+            android:contentDescription="New Tab"
+            android:layout_marginStart="4dp"/>
+
+        <ImageButton
             android:id="@+id/goButton"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@android:drawable/ic_menu_send"
             android:contentDescription="Go"
-            android:layout_marginStart="8dp"/>
+            android:layout_marginStart="4dp"/>
     </LinearLayout>
 
-    <!-- Main View Flipper (Browser / Dashboard / Settings) -->
+    <!-- Main View Flipper (Browser / Dashboard / Settings / Tabs) -->
     <ViewFlipper
         android:id="@+id/viewFlipper"
         android:layout_width="match_parent"
@@ -112,7 +121,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="OLED Dark Mode Enabled | Zero Bloat"
+                        android:text="OLED Dark Mode Enabled | Zero Bloatware"
                         android:textColor="#A0A0A0"
                         android:textSize="14sp"
                         android:layout_marginTop="4dp"/>
@@ -151,6 +160,32 @@
                 android:text="● Enhanced Tracking &amp; Ad Blocker: Active"
                 android:textColor="#E0E0E0"
                 android:textSize="15sp"/>
+        </LinearLayout>
+
+        <!-- Child 3: Tabs Tray View -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active Tabs &amp; Sessions"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:id="@+id/activeTabsCountText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active Tabs: 1"
+                android:textColor="#00FF88"
+                android:textSize="16sp"/>
         </LinearLayout>
     </ViewFlipper>
 
