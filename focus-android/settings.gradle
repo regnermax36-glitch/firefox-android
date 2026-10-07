@@ -20,6 +20,8 @@ plugins {
 apply from: file('../shared-settings.gradle')
 
 include ':app'
+include ':maxrefner-browser'
+project(':maxrefner-browser').projectDir = new File(rootDir, '../maxrefner-browser')
 
 gradle.projectsLoaded { ->
     // Disables A-C tests and lint when building Focus.
