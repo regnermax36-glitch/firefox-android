@@ -5,6 +5,12 @@
 apply plugin: 'java-library'
 apply plugin: 'kotlin'
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(config.jvmTargetCompatibility)
+    }
+}
+
 dependencies {
     implementation ComponentsDependencies.tools_detekt_api
 

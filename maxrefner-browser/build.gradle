@@ -1,0 +1,67 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    defaultConfig {
+        applicationId "com.maxrefner.browser"
+        minSdkVersion config.minSdkVersion
+        compileSdk config.compileSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode 1
+        versionName "1.0.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    namespace 'com.maxrefner.browser'
+}
+
+dependencies {
+    implementation project(':concept-awesomebar')
+    implementation project(':concept-fetch')
+    implementation project(':concept-engine')
+    implementation project(':concept-tabstray')
+    implementation project(':concept-toolbar')
+    implementation project(':concept-storage')
+    implementation project(':concept-base')
+
+    implementation project(':browser-domains')
+    implementation project(':browser-icons')
+    implementation project(':browser-session-storage')
+    implementation project(':browser-state')
+    implementation project(':browser-tabstray')
+    implementation project(':browser-thumbnails')
+    implementation project(':browser-toolbar')
+    implementation project(':browser-menu')
+
+    implementation project(':feature-awesomebar')
+    implementation project(':feature-contextmenu')
+    implementation project(':feature-downloads')
+    implementation project(':feature-intent')
+    implementation project(':feature-media')
+    implementation project(':feature-search')
+    implementation project(':feature-session')
+    implementation project(':feature-toolbar')
+    implementation project(':feature-tabs')
+    implementation project(':feature-privatemode')
+    implementation project(':feature-sitepermissions')
+
+    implementation project(':support-base')
+    implementation project(':support-locale')
+    implementation project(':support-utils')
+    implementation project(':support-ktx')
+
+    implementation ComponentsDependencies.google_material
+    implementation ComponentsDependencies.androidx_appcompat
+    implementation ComponentsDependencies.androidx_core_ktx
+    implementation ComponentsDependencies.androidx_constraintlayout
+}

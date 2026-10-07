@@ -38,7 +38,8 @@ ext {
     // minute.
     def time = new SimpleDateFormat("HHmm").format(today)
 
-    generatedVersionCode = (base + year + day + time) as int
+    def codeVal = (base + year + day + time).toLong()
+    generatedVersionCode = (codeVal > Integer.MAX_VALUE ? (codeVal % Integer.MAX_VALUE) : codeVal) as int
 
     println("Generated versionCode: $generatedVersionCode")
     println()
