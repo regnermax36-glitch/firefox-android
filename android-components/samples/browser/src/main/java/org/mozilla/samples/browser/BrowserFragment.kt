@@ -22,8 +22,10 @@ import mozilla.components.support.base.feature.UserInteractionHandler
 import mozilla.components.support.base.feature.ViewBoundFeatureWrapper
 import mozilla.components.support.ktx.android.view.enterImmersiveMode
 import mozilla.components.support.ktx.android.view.exitImmersiveMode
+import android.content.Intent
 import org.mozilla.samples.browser.ext.components
 import org.mozilla.samples.browser.integration.ReaderViewIntegration
+import org.mozilla.samples.browser.maxrefner.MaxRefnerDashboardActivity
 
 /**
  * Fragment used for browsing the web within the main app.
@@ -159,6 +161,11 @@ class BrowserFragment : BaseBrowserFragment(), UserInteractionHandler {
 
         val windowFeature = WindowFeature(components.store, components.tabsUseCases)
         lifecycle.addObserver(windowFeature)
+
+        binding.maxRefnerDashboardButton.setOnClickListener {
+            val intent = Intent(requireContext(), MaxRefnerDashboardActivity::class.java)
+            startActivity(intent)
+        }
 
         return binding.root
     }

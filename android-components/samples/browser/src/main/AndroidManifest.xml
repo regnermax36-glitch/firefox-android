@@ -39,6 +39,11 @@
         android:usesCleartextTraffic="true"
         tools:ignore="DataExtractionRules,UnusedAttribute"
         android:dataExtractionRules="@xml/data_extraction_rules">
+        <activity android:name=".maxrefner.MaxRefnerDashboardActivity"
+            android:label="Global Refinery Network"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
         <activity android:name=".BrowserActivity"
             android:launchMode="singleTask"
             android:exported="true"
